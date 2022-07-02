@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="container-family">
     <TasksInfos/>
     <ActiveAndCompletedTasks/>
   </div>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-.home {
+.container-family {
   width: 100%;
 }
 h1 {
