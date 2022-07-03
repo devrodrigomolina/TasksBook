@@ -1,7 +1,7 @@
 <template>
   <div class="container-family">
-    <TasksInfos/>
-    <ActiveAndCompletedTasks/>
+
+
   </div>
 </template>
 
