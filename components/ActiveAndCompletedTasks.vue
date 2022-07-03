@@ -2,29 +2,15 @@
   <div class="container-tasks-active-complete">
     <div class="tarefas-ativas">
       <h2 class="titulo">Tarefas Ativas</h2>
-      <ul class="task-itens">
-        <li>
-          <input class="selected" type="checkbox" name="" id="">
-          <p>Cabeçear a navaia</p>
-          <div class="icons">
-            <fa class="update-item" icon="pen-to-square" /> 
-            <fa class="remove-item" icon="trash-can" /> 
-          </div>
-        </li>
+      <ul class="task-itens" v-for="(tasks, index) in this.$store.state.taskAdd" :key="index">
+        <TasksActiveds :task="tasks" :pos="index" />
       </ul>
     </div>
 
     <div class="tarefas-completas">
       <h2 class="titulo">Tarefas Completas</h2>
-      <ul class="tasks-completas">
-        <li> <!-- RETORNAR ESSA LI PELO JAVASCRIPT -->
-          <input class="selected" type="checkbox" name="" id="">
-          <p>Cabeçear a navaia</p>
-          <div class="icons">
-            <fa class="update-item" icon="pen-to-square" /> 
-            <fa class="remove-item" icon="trash-can" /> 
-          </div>
-        </li>
+      <ul class="tasks-completas" v-for="(tasksCompleteds, index) in this.$store.state.tasksCompleteds" :key="index">
+        <TasksCompleted :taskCompleted="tasksCompleteds"/>
       </ul>
     </div>
   </div>
@@ -32,14 +18,18 @@
 
 <script>
 export default {
+  methods: {
+
+  },
 
 }
 </script>
 
 <style scoped>
+
 .container-tasks-active-complete {
   width: 700px;
-  height: 400px;
+  height: 450px;
   background: #2C3440;
   color: white;
   margin-left: 135px;
@@ -50,36 +40,17 @@ export default {
   padding: 20px 20px;
   color: #29A19C;
 }
-.task-itens, .tasks-completas {
+.task-itens,
+.tasks-completas {
   width: 600px;
   height: 50px;
-  margin: 0 auto;
+  margin: 4px auto;
+}
+.tarefas-completas,
+.tarefas-ativas {
+  height: 50%;
+  overflow: auto;
 }
 
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  border: 1px solid #8d8d8da2;
-}
 
-.selected {
-  width: 25px;
-  height: 25px;
-  margin: 0 20px;
-}
-.icons {
-  margin-right: 20px;
-}
-.remove-item, .update-item {
-  cursor: pointer;
-  font-size: 18px;
-  margin-left: 10px;
-}
-.remove-item {
-  color: #F05454;
-}
 </style>
