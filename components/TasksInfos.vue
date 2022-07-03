@@ -4,14 +4,14 @@
     <div class="tasks-criadas">
       <p>Criadas</p>
       <div class="circulo-infos">
-        <p class="qtd-tasks">341</p>
+        <p class="qtd-tasks">{{this.$store.state.taskAdd.length}}</p>
         <p>Tasks</p>
       </div>
     </div>
     <div class="tasks-completas">
       <p>Completas</p>
       <div class="circulo-infos">
-        <p class="qtd-tasks">234</p>
+        <p class="qtd-tasks">{{this.$store.state.tasksCompleteds.length}}</p>
         <p>Tasks</p>
       </div>
     </div>
