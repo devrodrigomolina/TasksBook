@@ -12,7 +12,7 @@
   
       <div class="menu-categorias">
         <h2 class="categoria-titulo">Categorias</h2>
-        <nuxt-link to="/"><fa class="fa-lg" icon="home-user" />Casa</nuxt-link>
+        <nuxt-link to="/"><fa class="fa-lg" icon="home-user" />Home</nuxt-link>
         <nuxt-link to="/family"><fa class="fa-lg" icon="people-group" />Familia</nuxt-link>
         <nuxt-link to="/work"><fa  class="fa-lg" icon="briefcase" />Trabalho</nuxt-link>
         <nuxt-link to="/sports"><fa  class="fa-lg" icon="medal" />Sports</nuxt-link>
