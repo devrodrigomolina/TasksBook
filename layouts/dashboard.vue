@@ -1,22 +1,25 @@
 <template>
   <div class="container-dashboard">
     <Header />
+    <div class="infos-tasks">
+      <TasksInfos/>
+      <ActiveAndCompletedTasks/>
+    </div>
     <Nuxt />
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue"
 
 export default {
-  components: {
-    Header
-  }
+
 }
 </script>
 
 <style>
 .container-dashboard {
   display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
