@@ -1,11 +1,29 @@
 <template>
   <li>
-    <input class="none selected" type="checkbox" name="" id="">
-    <p>{{task}}</p>
+    <input class="none selected"
+      type="checkbox"
+    />
+    <input class="ipt-edit-task"
+      type="text"
+      :readonly="readonly"
+      :value="task"
+      @change="newText"
+    />
     <div class="none icons">
-      <fa @click="completeTask(pos, task)" class="complete-item" icon="check" /> 
-      <fa class="update-item" icon="pen-to-square" /> 
-      <fa class="remove-item" icon="trash-can" /> 
+      <fa @click="completeTask(pos, task)"
+        v-if="readonly"
+        class="complete-item"
+        icon="check"
+      /> 
+      <fa @click="editTask(pos, task)"
+        class="update-item"
+        :class="{ active: readonly, 'complete-item': sucess }"
+        icon="pen-to-square"
+      /> 
+      <fa @click="deleteTask(pos)"
+        class="remove-item"
+        icon="trash-can"
+      /> 
     </div>
   </li>
    
@@ -13,10 +31,30 @@
 
 <script>
 export default {
+  data() {
+    return {
+      readonly: true,
+      newTaskText: '',
+      sucess: false
+    }
+  },
   props: ['task', 'pos'],
   methods: {
     completeTask(posicaoTask, task) {
-      this.$store.dispatch('CompleteTask', {posicaoTask, task})
+      this.$store.dispatch('CompleteTask', { posicaoTask, task })
+    },
+    newText(event) {
+      this.newTaskText = event.target.value
+    },
+    editTask(pos, oldTask) {
+      let inputSelect = document.querySelectorAll('.ipt-edit-task')
+      inputSelect[pos].focus()
+      this.sucess =! this.sucess
+      this.readonly =! this.readonly
+      this.$store.dispatch('editTask',{newtask: this.newTaskText, oldtaskk: oldTask, posicaoTask: pos })
+    },
+    deleteTask(posicaoTask) {
+      this.$store.dispatch('deleteTasks', posicaoTask)
     }
   }
 }
@@ -31,7 +69,15 @@ export default {
   background: rgb(177, 177, 177);
   outline: none;
 }
-
+.ipt-edit-task {
+  width: 100%;
+  height: 50%;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+}
 li {
   display: flex;
   align-items: center;
