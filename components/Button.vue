@@ -1,11 +1,10 @@
 <template>
   <div class="container-btn">
-
     <button @click="newTask = !newTask" class="btn"><fa class="icon fa-xl" icon="circle-plus" />Nova Task </button>
     <div v-if="newTask" class="ipt-new-task">
-      <input v-model="taskText" placeholder="Digite aqui sua tarefa" type="text" name="" id="">
+      <input v-model="taskText" @keyup="enterTaskSend" placeholder="Digite aqui sua tarefa" type="text" name="" id="inputNewTask">
         <div class="none icons">
-          <fa @click="completeTask" class="complete-item" icon="check" /> 
+          <fa @click="sendTask" class="complete-item" icon="check" /> 
         </div>
     </div>
   </div>
@@ -21,8 +20,18 @@ export default {
     }
   },
   methods: {
-    completeTask() {
-      this.$store.dispatch('addTask', this.taskText)
+    sendTask() {
+      if(this.taskText === '') {
+        alert('Digite alguma coisa!!!')
+      }else {
+        this.validateTask
+        this.$store.dispatch('addTask', this.taskText)
+      }
+    },
+    enterTaskSend(e) {
+      if(e.keyCode == 13){
+        this.$store.dispatch('addTask', this.taskText)
+      }
     }
   }
 
