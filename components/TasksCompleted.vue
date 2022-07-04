@@ -1,7 +1,7 @@
 <template>
   <li>
     <input class="none selected" type="checkbox" name="" id="">
-    <p class="completed">{{taskCompleted.task}}</p>
+    <p class="completed">{{taskCompleted}}</p>
     <div class="none icons">
       <fa class="update-item" icon="pen-to-square" /> 
       <fa class="remove-item" icon="trash-can" />  
