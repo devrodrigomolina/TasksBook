@@ -18,7 +18,7 @@
     <div class="tasks-deletadas">
       <p>Deletadas</p>
       <div class="circulo-infos">
-        <p class="qtd-tasks">439</p>
+        <p class="qtd-tasks">{{this.$store.state.tasksDeleteds}}</p>
         <p>Tasks</p>
       </div>
     </div>
