@@ -1,24 +1,24 @@
 <template>
-  <div class="container-tasks-infos">
+  <div class="container-tasks-infos" >
     <h2 class="titulo">Sucessos da semana</h2>
     <div class="tasks-criadas">
       <p>Criadas</p>
-      <div class="circulo-infos">
-        <p class="qtd-tasks">{{this.$store.state.taskAdd.length}}</p>
+      <div class="circulo-infos" >
+        <p class="qtd-tasks">{{infos.tasks.length}}</p>
         <p>Tasks</p>
       </div>
     </div>
     <div class="tasks-completas">
       <p>Completas</p>
       <div class="circulo-infos">
-        <p class="qtd-tasks">{{this.$store.state.tasksCompleteds.length}}</p>
+        <p class="qtd-tasks">{{infos.tasksCompleteds.length}}</p>
         <p>Tasks</p>
       </div>
     </div>
     <div class="tasks-deletadas">
       <p>Deletadas</p>
       <div class="circulo-infos">
-        <p class="qtd-tasks">{{this.$store.state.tasksDeleteds}}</p>
+        <p class="qtd-tasks">{{infos.tasksDeleteds}}</p>
         <p>Tasks</p>
       </div>
     </div>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-
+  props: ['infos'],
 }
 </script>
 

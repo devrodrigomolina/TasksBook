@@ -1,12 +1,8 @@
 <template>
   <div class="container-btn">
-    <button @click="newTask = !newTask" class="btn"><fa class="icon fa-xl" icon="circle-plus" />Nova Task </button>
-    <div v-if="newTask" class="ipt-new-task">
-      <input v-model="taskText" @keyup="enterTaskSend" placeholder="Digite aqui sua tarefa" type="text" name="" id="inputNewTask">
-        <div class="none icons">
-          <fa @click="sendTask" class="complete-item" icon="check" /> 
-        </div>
-    </div>
+    <button @click="modalOpen"
+      class="btn"><fa class="icon fa-xl" icon="circle-plus" />{{title}}
+    </button>
   </div>
 </template>
 
@@ -15,26 +11,24 @@
 export default {
   data() {
     return {
-      newTask: false,
-      taskText: '',
+      modal: null
+    }
+  },
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    showmodal: {
+      type: Boolean
     }
   },
   methods: {
-    sendTask() {
-      if(this.taskText === '') {
-        alert('Digite alguma coisa!!!')
-      }else {
-        this.validateTask
-        this.$store.dispatch('addTask', this.taskText)
-      }
-    },
-    enterTaskSend(e) {
-      if(e.keyCode == 13){
-        this.$store.dispatch('addTask', this.taskText)
-      }
+    modalOpen() {
+      this.modal =! this.showmodal
+      this.$emit('emit', this.modal)
     }
   }
-
 }
 </script>
 

@@ -6,7 +6,8 @@
           <img src="../static/icon-task.png" alt="" srcset="">
           <h2>Tasks Book</h2>
         </div>
-        <Button />
+        <Button :showmodal="openModal" title="Nova task" @emit="teste"/>
+        <ModalAddTask v-if="openModal"/>
         <ToogleTheme />
       </div>
   
@@ -29,7 +30,16 @@
 <script>
 
 export default {
-
+  data() {
+    return {
+      openModal: false
+    }
+  },
+  methods: {
+    teste(param) {
+      this.openModal = param
+    }
+  }
 }
 
 </script>
