@@ -39,25 +39,37 @@ export default {
   },
   props: {
     task: {
-      type: String,
+      type: [Object, String],
     },
     pos: {
       type: Number,
     },
   },
   methods: {
-    ...mapActions("family", ["CompleteTaskFamily"]),
-    ...mapActions("family", ["editTaskFamily"]),
-    ...mapActions("family", ["deleteTasksFamily"]),
-
-    ...mapActions("work", ["CompleteTaskWork"]),
-    ...mapActions("work", ["editTaskWork"]),
-    ...mapActions("work", ["deleteTasksWork"]),
+    ...mapActions("family", [
+      "CompleteTaskFamily",
+      "editTaskFamily",
+      "deleteTasksFamily",
+    ]),
+    ...mapActions("work", [
+      "CompleteTaskWork",
+      "editTaskWork",
+      "deleteTasksWork",
+    ]),
+    ...mapActions("sports", [
+      "CompleteTaskSports",
+      "editTaskSports",
+      "deleteTasksSports",
+    ]),
 
     checkRouteAndComplete(posicaoTask, task) {
       this.checkRoute == "/family"
         ? this.CompleteTaskFamily({ posicaoTask, task })
-        : this.CompleteTaskWork({ posicaoTask, task });
+        : this.checkRoute == "/work"
+        ? this.CompleteTaskWork({ posicaoTask, task })
+        : this.checkRoute == "/sports"
+        ? this.CompleteTaskSports({ posicaoTask, task })
+        : "";
     },
 
     checkRouteAndEdit(pos, oldTask) {
@@ -67,17 +79,29 @@ export default {
             oldtaskk: oldTask,
             posicaoTask: pos,
           })
-        : this.editTaskWork({
+        : this.checkRoute == "/work"
+        ? this.editTaskWork({
             newtask: this.newTaskText,
             oldtaskk: oldTask,
             posicaoTask: pos,
-          });
+          })
+        : this.checkRoute == "/sports"
+        ? this.editTaskSports({
+            newtask: this.newTaskText,
+            oldtaskk: oldTask,
+            posicaoTask: pos,
+          })
+        : "";
     },
 
     checkRouteAndDelete(posicaoTask) {
       this.checkRoute == "/family"
         ? this.deleteTasksFamily(posicaoTask)
-        : this.deleteTasksWork(posicaoTask);
+        : this.checkRoute == "/work"
+        ? this.deleteTasksWork(posicaoTask)
+        : this.checkRoute == "/sports"
+        ? this.deleteTasksSports(posicaoTask)
+        : "";
     },
 
     completeTask(posicaoTask, task) {
@@ -91,7 +115,6 @@ export default {
       inputSelect[pos].focus();
       this.sucess = !this.sucess;
       this.readonly = !this.readonly;
-
       this.checkRouteAndEdit(pos, oldTask);
     },
     deleteTask(posicaoTask) {

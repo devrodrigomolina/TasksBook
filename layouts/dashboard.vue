@@ -23,6 +23,8 @@ export default {
       this.actualyPage = this.$store.state.family
     } else if (this.$route.path == "/work") {
       this.actualyPage = this.$store.state.work
+    } else if (this.$route.path == "/sports") {
+      this.actualyPage = this.$store.state.sports
     }
   },
   watch: {
@@ -35,6 +37,8 @@ export default {
           this.actualyPage = this.$store.state.family
         } else if (newValue.path == "/work") {
           this.actualyPage = this.$store.state.work
+        } else if (newValue.path == "/sports") {
+          this.actualyPage = this.$store.state.sports
         }
       }
     },

@@ -32,11 +32,14 @@ export default {
   methods:{
     ...mapActions('family', ['familyAddTask']),
     ...mapActions('work', ['workAddTask']),
+    ...mapActions('sports', ['sportsAddTask']),
     sendForm() {
       if (this.optionsTask == 'familia') {
         this.familyAddTask({ task: this.task, optionsTask: this.optionsTask })
       } else if(this.optionsTask == 'trabalho') {
         this.workAddTask({ task: this.task, optionsTask: this.optionsTask })
+      } else if(this.optionsTask == 'sports') {
+        this.sportsAddTask({ task: this.task, optionsTask: this.optionsTask })
       }
     } 
   }

@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: ['taskCompleted']
+  props: ['taskCompleted', 'task']
 }
 </script>
 

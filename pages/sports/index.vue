@@ -1,5 +1,5 @@
 <template>
-  <div class="container-sports">
+  <div class="container-work">
 
    
   </div>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-.container-sports {
+.container-work {
   width: 100%;
 }
 h1 {
