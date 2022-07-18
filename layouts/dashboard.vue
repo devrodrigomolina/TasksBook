@@ -5,12 +5,15 @@
       <TasksInfos :infos="actualyPage" />
       <ActiveAndCompletedTasks :infos="actualyPage" />
     </div>
+    
     <Nuxt />
   </div>
 </template>
 
 <script>
+
 export default {
+  el: '#app',
   data() {
     return {
       actualyPage: null,
@@ -53,4 +56,10 @@ export default {
   width: 100vw;
   height: 100vh;
 }
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
+
 </style>

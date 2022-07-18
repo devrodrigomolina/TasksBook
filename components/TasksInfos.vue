@@ -60,12 +60,31 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 4px solid #29A19C;
+  border: 3px solid #29A19C;
+  animation: a .9s ease-in linear both;
+/*   animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 .qtd-tasks {
   font-size: 1.7rem;
   margin-bottom: 5px;
   color: #29A19C;
+}
+@keyframes a {
+  0% {
+    border: transparent;
+  }
+  30% {
+    border-right: 2px solid #29A19C;
+  }
+  60% {
+    border-bottom: 2px solid #29A19C;
+  }
+  90% {
+    border-left: 2px solid #29A19C;
+  }
+  100% {
+    border: 2px solid #29A19C;
+  }
 }
 </style>

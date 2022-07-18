@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-
-
+    <VueApexBarCharts/>
+    <VueApexCircle/>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
 <style>
 .home {
   width: 100%;
+  margin: 50px 70px 0 0;
 }
 h1 {
   text-align: center;
