@@ -6,7 +6,6 @@ export default {
     });
   },
   CompleteTaskWork(context, payload) {
-    console.log(payload)
     context.commit("COMPLETE_TASK_WORK", payload);
     context.commit("dashboard/GET_ALL_TASKS_COMPLETEDS", payload, {
       root: true,

@@ -6,6 +6,10 @@
       <ActiveAndCompletedTasks :infos="actualyPage" />
     </div>
     
+    <div class="charts">
+      <VueApexBarCharts :infos="actualyPage"/>
+      <VueApexCircle :infos="actualyPage"/>
+    </div>
     <Nuxt />
   </div>
 </template>
@@ -57,9 +61,10 @@ export default {
   height: 100vh;
 }
 
-#chart {
-  max-width: 650px;
-  margin: 35px auto;
+.charts{
+  width: 650px;
+  margin-left: 80px;
+  margin-top: 60px;
 }
 
 </style>

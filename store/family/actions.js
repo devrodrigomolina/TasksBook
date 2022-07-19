@@ -9,9 +9,9 @@ export default {
       root: true,
     });
   },
-  editTaskFamily(context, payload) {
-    context.commit("EDIT_TASK_FAMILY", payload);
-  },
+  
+  editTaskFamily: (context, payload) => context.commit("EDIT_TASK_FAMILY", payload),
+
   deleteTasksFamily(context, payload) {
     context.commit("DELETE_TASK_FAMILY", payload);
     context.commit("dashboard/GET_ALL_TASKS_DELETEDS", payload, { root: true });

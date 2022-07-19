@@ -40,9 +40,7 @@ export default {
       brands: true
     }
   },
-  plugins: [
-    '@/plugins/addLocalStorage',
-  ],
+  plugins: [{ src: '~/plugins/persistedState.client.js' }],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios

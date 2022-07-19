@@ -18,7 +18,8 @@
     "vue": "^2.6.14",
     "vue-apexcharts": "^1.6.2",
     "vue-server-renderer": "^2.6.14",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.1.1",

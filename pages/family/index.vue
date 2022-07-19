@@ -12,9 +12,7 @@ export default {
 </script>
 
 <style>
-.container-family {
-  width: 100%;
-}
+
 h1 {
   text-align: center;
 }

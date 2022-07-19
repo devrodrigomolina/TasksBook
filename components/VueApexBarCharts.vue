@@ -34,7 +34,7 @@ export const chartOptions = {
 
 export default {
   components: { apexchart: VueApexCharts },
-
+  props: ['infos'],
   data() {
     return {
       step: 1,
@@ -42,20 +42,28 @@ export default {
       chartData: [],
     };
   },
-
-  created() {
+  mounted() {
     this.chartData = [{
       data: [
-        this.$store.state.dashboard.tasks.length,
-        this.$store.state.dashboard.tasksCompleteds.length,
-        this.$store.state.dashboard.tasksDeleteds,
+        this.infos.tasks.length,
+        this.infos.tasksCompleteds.length,
+        this.infos.tasksDeleteds
       ] 
     }];
+  },
+  watch: {
+    infos() {
+      this.chartData = [{
+        data: [
+          this.infos.tasks.length,
+          this.infos.tasksCompleteds.length,
+          this.infos.tasksDeleteds
+        ] 
+      }];
+    }
   },
 };
 </script>
 <style>
-.container-apex-bar {
-  margin-left: 60px;
-}
+
 </style>

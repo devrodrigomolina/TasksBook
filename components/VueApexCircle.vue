@@ -39,18 +39,28 @@ export default {
       series: [],
     };
   },
-
-  created() {
-    this.series.push(this.$store.state.dashboard.tasks.length)
-    this.series.push( this.$store.state.dashboard.tasksCompleteds.length)
-    this.series.push(this.$store.state.dashboard.tasksDeleteds)        
-    console.log(this.series)
+  props: ['infos'],
+  mounted() {
+      this.series.splice(0, this.series.length, this.series.push(
+        this.infos.tasks.length,
+        this.infos.tasksCompleteds.length,
+        this.infos.tasksDeleteds
+      ))
+  },
+  watch: {
+    infos() {
+      this.series.splice(0, this.series.length, this.series.push(
+        this.infos.tasks.length,
+        this.infos.tasksCompleteds.length,
+        this.infos.tasksDeleteds
+      ))
+     
+    }
   },
 };
 </script>
 <style>
 .container-apex {
   margin-top: 100px;
-
 }
 </style>

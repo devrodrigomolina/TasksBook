@@ -13,7 +13,7 @@ export default {
 
 <style>
 .container-sports {
-  width: 100%;
+
 }
 h1 {
   text-align: center;
