@@ -5,9 +5,12 @@
       class="ipt-edit-task"
       type="text"
       :readonly="readonly"
-      :value="task"
+      :value="task.task"
       @change="newText"
     />
+
+    <p>{{task.optionsTask}}</p> 
+
     <div class="none icons" v-if="this.checkRoute != '/'">
       <fa
         @click="completeTask(pos, task)"
@@ -35,6 +38,7 @@ export default {
       readonly: true,
       newTaskText: "",
       sucess: false,
+      route: this.checkRoute
     };
   },
   props: {
@@ -139,7 +143,7 @@ export default {
   outline: none;
 }
 .ipt-edit-task {
-  width: 100%;
+  width: 50%;
   height: 50%;
   outline: none;
   border: none;
@@ -147,10 +151,10 @@ export default {
   color: white;
   font-size: 1rem;
 }
+
 li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -176,6 +180,7 @@ input[type="checkbox"]:checked {
 .icons {
   display: flex;
   margin-right: 20px;
+  margin-left: 80px;
 }
 .remove-item,
 .update-item,

@@ -2,6 +2,10 @@
   <div class="container-tasks-active-complete">
     <div class="tarefas-ativas">
       <h2 class="titulo">Tarefas Ativas</h2>
+      <div class="infosCategoria">
+        <h4>Tarefa</h4>
+        <h4>Categoria</h4>
+      </div>
       <ul class="task-itens" v-for="(tasks, index) in infos.tasks" :key="index">
         <TasksActiveds :task="tasks" :pos="index" />
       </ul>
@@ -39,6 +43,14 @@ export default {
 .titulo {
   padding: 20px 20px;
   color: #29a19c;
+}
+.infosCategoria {
+  max-width: 600px;
+  margin: 20 auto;
+  margin-bottom: 10px;
+  display: flex;
+  color: #289b97;
+  justify-content: space-around;
 }
 .task-itens,
 .tasks-completas {

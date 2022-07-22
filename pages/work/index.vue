@@ -12,9 +12,7 @@ export default {
 </script>
 
 <style>
-.container-sports {
 
-}
 h1 {
   text-align: center;
 }

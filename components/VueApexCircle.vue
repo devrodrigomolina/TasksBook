@@ -6,8 +6,7 @@
         height="350"
         :options="chartOptions"
         :series="series"
-        ref="chartData"
-        
+        ref="chartData"  
       ></apexchart>
     </div>
   </div>

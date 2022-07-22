@@ -1,13 +1,13 @@
 export default {
   ADD_TASK_WORK(state, payload) {
-    state.tasks.push(payload.task) 
+    state.tasks.push(payload) 
   },
   COMPLETE_TASK_WORK(state, payload) {
     state.tasks.splice(payload.posicaoTask, 1)
-    state.tasksCompleteds.push(payload.task)
+    state.tasksCompleteds.push(payload)
   },
   EDIT_TASK_WORK(state, payload) {
-    state.tasks.splice(payload.posicaoTask, 1, payload.newtask)
+    state.tasks[payload.posicaoTask].task =  payload.newtask
   },
   DELETE_TASK_WORK(state, payload) {
     state.tasksDeleteds++

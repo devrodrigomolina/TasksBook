@@ -18,6 +18,7 @@ import VueApexCharts from "vue-apexcharts";
 export const chartOptions = {
   chart: { 
     type: "bar",
+
   },
   fill: {
     colors: ['#1A73E8', '#B32824', 'rgb(0, 255, 34)']

@@ -1,7 +1,7 @@
 <template>
   <li>
     <input class="none selected" type="checkbox" name="" id="">
-    <p class="completed">{{taskCompleted}}</p>
+    <p class="completed">{{taskCompleted.task.task}} | {{taskCompleted.task.optionsTask}}</p>
     <div class="none icons">
       <fa class="update-item" icon="pen-to-square" /> 
       <fa class="remove-item" icon="trash-can" />  
@@ -19,7 +19,7 @@ export default {
 li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   height: 100%;
   margin-bottom: 4px;
