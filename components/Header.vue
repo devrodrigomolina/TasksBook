@@ -7,7 +7,9 @@
           <h2>Tasks Book</h2>
         </div>
         <Button :showmodal="openModal" title="Nova task" @emit="teste" />
-        <ModalAddTask v-if="openModal" />
+        <transition name="modal">
+          <ModalAddTask v-if="openModal" />
+        </transition>
         <ToogleTheme />
       </div>
 
@@ -55,6 +57,17 @@ export default {
 </script>
 
 <style>
+
+.modal-enter-active,.modal-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.modal-enter,
+.modal-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
 .top-header {
   display: flex;
   align-items: center;

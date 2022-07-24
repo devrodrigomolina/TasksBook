@@ -1,9 +1,10 @@
 <template>
   <div class="container-modal">
     <div class="dados">
-      <label for="tarefa">Digite sua tarefa:</label><br>
-      <input type="text" id="tarefa" v-model="task" name="fname"><br>
-      <p>Digite a categoria</p>
+      <h1>Adicione sua tarefa</h1>
+      <label for="tarefa">Digite sua tarefa:</label><br />
+      <input type="text" id="tarefa" v-model="task" name="fname" /><br />
+      <p>Escolha a categoria:</p>
       <select v-model="optionsTask" name="" id="">
         <option disabled value="none">Escolha uma caegoria</option>
         <option value="familia">Familia</option>
@@ -20,57 +21,57 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from "vuex";
 
 export default {
   data() {
     return {
-      task: '',
-      optionsTask: ''
-    }
+      task: "",
+      optionsTask: "",
+    };
   },
-  methods:{
-    ...mapActions('family', ['familyAddTask']),
-    ...mapActions('work', ['workAddTask']),
-    ...mapActions('sports', ['sportsAddTask']),
+  methods: {
+    ...mapActions("family", ["familyAddTask"]),
+    ...mapActions("work", ["workAddTask"]),
+    ...mapActions("sports", ["sportsAddTask"]),
     sendForm() {
-      if (this.optionsTask == 'familia') {
-        this.familyAddTask({ task: this.task, optionsTask: this.optionsTask })
-      } else if(this.optionsTask == 'trabalho') {
-        this.workAddTask({ task: this.task, optionsTask: this.optionsTask })
-      } else if(this.optionsTask == 'sports') {
-        this.sportsAddTask({ task: this.task, optionsTask: this.optionsTask })
+      if (this.optionsTask == "familia") {
+        this.familyAddTask({ task: this.task, optionsTask: this.optionsTask });
+      } else if (this.optionsTask == "trabalho") {
+        this.workAddTask({ task: this.task, optionsTask: this.optionsTask });
+      } else if (this.optionsTask == "sports") {
+        this.sportsAddTask({ task: this.task, optionsTask: this.optionsTask });
       }
-    } 
-  }
-}
-
-
-
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 .container-modal {
   width: 800px;
   height: 600px;
-  background: #2C3440;
+  background: #2c3440;
   border-radius: 10px;
   position: absolute;
   top: 70px;
-  left: 320px;
-  margin: 0 auto;
-  transition: all 4s;
+  left: 415px;
+  margin: 10px auto;
+  border: 1px dashed #29a19c;
 }
 .dados {
   margin: 0 auto;
   width: 100%;
   max-width: 600px;
-  border: 1px solid red;
   color: white;
   margin: 100px;
 }
-label, input, select {
+.dados h1 {
+  margin-bottom: 60px;
+}
+label,
+input,
+select {
   width: 100%;
   height: 35px;
   margin-bottom: 10px;
@@ -83,17 +84,16 @@ label, input, select {
   width: 100%;
   height: 40px;
   position: relative;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 .btn {
   width: 100%;
   height: 100%;
-  background: #29A19C;
+  background: #29a19c;
   border: none;
   border-radius: 10px;
   color: white;
   cursor: pointer;
   font-weight: 700;
 }
-
 </style>
