@@ -44,9 +44,13 @@ export default {
     } 
   }
 }
+
+
+
 </script>
 
 <style scoped>
+
 .container-modal {
   width: 800px;
   height: 600px;
@@ -56,6 +60,7 @@ export default {
   top: 70px;
   left: 320px;
   margin: 0 auto;
+  transition: all 4s;
 }
 .dados {
   margin: 0 auto;

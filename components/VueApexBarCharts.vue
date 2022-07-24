@@ -14,28 +14,23 @@
 
 <script>
 import VueApexCharts from "vue-apexcharts";
-  
-export const chartOptions = {
-  chart: { 
-    type: "bar",
 
+export const chartOptions = {
+  chart: {
+    type: "bar",
   },
   fill: {
-    colors: ['#1A73E8', '#B32824', 'rgb(0, 255, 34)']
+    colors: ["#1A73E8", "#B32824", "rgb(0, 255, 34)"],
   },
   xaxis: {
-    categories: [
-      "Criadas",
-      "Completas",
-      "Deletadas",
-    ],
+    categories: ["Criadas", "Completas", "Deletadas"],
   },
   title: { text: "Gráfico 1", align: "center" },
 };
 
 export default {
   components: { apexchart: VueApexCharts },
-  props: ['infos'],
+  props: ["infos"],
   data() {
     return {
       step: 1,
@@ -44,27 +39,40 @@ export default {
     };
   },
   mounted() {
-    this.chartData = [{
-      data: [
-        this.infos.tasks.length,
-        this.infos.tasksCompleteds.length,
-        this.infos.tasksDeleteds
-      ] 
-    }];
+    this.chartData = [
+      {
+        data: [
+          this.tasksChart,
+          this.tasksCompletedsChart,
+          this.tasksDeletedsChart,
+        ],
+      },
+    ];
+  },
+  computed: {
+    tasksChart() {
+      return this.infos.tasks.length;
+    },
+    tasksCompletedsChart() {
+      return this.infos.tasksCompleteds.length;
+    },
+    tasksDeletedsChart() {
+      return this.infos.tasksDeleteds;
+    },
   },
   watch: {
-    infos() {
-      this.chartData = [{
-        data: [
-          this.infos.tasks.length,
-          this.infos.tasksCompleteds.length,
-          this.infos.tasksDeleteds
-        ] 
-      }];
-    }
+    tasksChart() {
+      this.chartData = [
+        {
+          data: [
+            this.tasksChart,
+            this.tasksCompletedsChart,
+            this.tasksDeletedsChart,
+          ],
+        },
+      ];
+    },
   },
 };
 </script>
-<style>
-
-</style>
+<style></style>

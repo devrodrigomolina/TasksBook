@@ -1,7 +1,6 @@
 export default {
   GET_ALL_TASKS: (state, payload) => state.tasks.push(payload),
   GET_ALL_TASKS_COMPLETEDS(state, payload) {
-    console.log(payload)
     state.tasksCompleteds.push(payload)
     state.tasks.splice(payload,1)
   },

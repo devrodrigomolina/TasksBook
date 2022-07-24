@@ -9,7 +9,7 @@
       @change="newText"
     />
 
-    <p>{{task.optionsTask}}</p> 
+    <p>{{ task.optionsTask }}</p>
 
     <div class="none icons" v-if="this.checkRoute != '/'">
       <fa
@@ -38,7 +38,7 @@ export default {
       readonly: true,
       newTaskText: "",
       sucess: false,
-      route: this.checkRoute
+      route: this.checkRoute,
     };
   },
   props: {

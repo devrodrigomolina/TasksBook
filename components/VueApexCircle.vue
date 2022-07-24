@@ -6,7 +6,7 @@
         height="350"
         :options="chartOptions"
         :series="series"
-        ref="chartData"  
+        ref="chartData"
       ></apexchart>
     </div>
   </div>
@@ -14,17 +14,17 @@
 
 <script>
 import VueApexCharts from "vue-apexcharts";
-  
+
 export const chartOptions = {
-  chart: { 
+  chart: {
     type: "donut",
     height: 600,
-    width: 600
-  },  
-  fill: {
-    colors: ['#1A73E8', '#B32824', 'rgb(0, 255, 34)']
+    width: 600,
   },
-  labels: ['Criadas', 'Completas', 'Deletadas'],
+  fill: {
+    colors: ["#1350a0c0", "#29A19C", "#b3292483"],
+  },
+  labels: ["Criadas","Completas", "Deletadas" ],
   title: { text: "Gráfico 2", align: "center" },
 };
 
@@ -38,23 +38,33 @@ export default {
       series: [],
     };
   },
-  props: ['infos'],
+  props: ["infos"],
   mounted() {
-      this.series.splice(0, this.series.length, this.series.push(
-        this.infos.tasks.length,
-        this.infos.tasksCompleteds.length,
-        this.infos.tasksDeleteds
-      ))
+    this.series = [
+      this.tasksChart,
+      this.tasksCompletedsChart,
+      this.tasksDeletedsChart,
+    ];
+  },
+  computed: {
+    tasksChart() {
+      return this.infos.tasks.length;
+    },
+    tasksCompletedsChart() {
+      return this.infos.tasksCompleteds.length;
+    },
+    tasksDeletedsChart() {
+      return this.infos.tasksDeleteds;
+    },
   },
   watch: {
-    infos() {
-      this.series.splice(0, this.series.length, this.series.push(
-        this.infos.tasks.length,
-        this.infos.tasksCompleteds.length,
-        this.infos.tasksDeleteds
-      ))
-     
-    }
+    tasksChart() {
+      this.series = [
+        this.tasksChart,
+        this.tasksCompletedsChart,
+        this.tasksDeletedsChart,
+      ];
+    },
   },
 };
 </script>
