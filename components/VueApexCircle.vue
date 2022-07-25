@@ -24,7 +24,7 @@ export const chartOptions = {
   fill: {
     colors: ["#1350a0c0", "#29A19C", "#b3292483"],
   },
-  labels: ["Criadas","Completas", "Deletadas" ],
+  labels: ["Ativas","Completas", "Deletadas" ],
   title: { text: "Gráfico 2", align: "center" },
 };
 

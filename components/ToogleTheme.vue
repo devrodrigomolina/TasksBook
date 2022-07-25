@@ -1,7 +1,7 @@
 <template>
   <div class="container-toogle">
     <div  @click.prevent="changeTheme" class="item-toogle">
-      <fa class="fa-2xl" icon="sun" />
+      <fa class="fa-2xl icontheme" icon="sun" />
     </div>
   </div>
 </template>
@@ -27,6 +27,8 @@ export default {
       document.querySelector('.menu').classList.toggle('white-clear')
       document.querySelector('.container-tasks-infos').classList.toggle('white-clear')
       document.querySelector('.container-tasks-active-complete').classList.toggle('white-clear')
+
+      document.querySelector('.icontheme').classList.toggle('black')
     }
   }
 }
