@@ -23,7 +23,7 @@ export const chartOptions = {
     colors: ["#1A73E8", "#B32824", "rgb(0, 255, 34)"],
   },
   xaxis: {
-    categories: ["Criadas", "Completas", "Deletadas"],
+    categories: ["Ativas", "Completas", "Deletadas"],
   },
   title: { text: "Gráfico 1", align: "center" },
 };
