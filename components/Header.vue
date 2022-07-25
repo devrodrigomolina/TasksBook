@@ -6,9 +6,9 @@
           <img src="../static/icon-task.png" alt="" srcset="" />
           <h2>Tasks Book</h2>
         </div>
-        <Button :showmodal="openModal" title="Nova task" @emit="teste" />
+        <Button :showmodal="openModal" title="Nova task" @emit="openOrCloseModal" />
         <transition name="modal">
-          <ModalAddTask v-if="openModal" />
+          <ModalAddTask v-if="openModal" @emit="openOrCloseModal"/>
         </transition>
         <ToogleTheme />
       </div>
@@ -49,7 +49,7 @@ export default {
     };
   },
   methods: {
-    teste(param) {
+    openOrCloseModal(param) {
       this.openModal = param;
     },
   },

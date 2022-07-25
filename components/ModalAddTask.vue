@@ -1,5 +1,8 @@
 <template>
   <div class="container-modal">
+    <div class="container-btn-close">
+      <button @click="modalClose" class="btn-close">X</button>
+    </div>
     <div class="dados">
       <h1>Adicione sua tarefa</h1>
       <label for="tarefa">Digite sua tarefa:</label><br />
@@ -27,7 +30,7 @@ export default {
   data() {
     return {
       task: "",
-      optionsTask: "",
+      optionsTask: ""
     };
   },
   methods: {
@@ -43,11 +46,26 @@ export default {
         this.sportsAddTask({ task: this.task, optionsTask: this.optionsTask });
       }
     },
+    modalClose() {
+      this.$emit('emit', false)
+    }
   },
 };
 </script>
 
 <style scoped>
+.container-btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.btn-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  border: 2px solid #29a19c;
+  color: #29a19c;
+}
 .container-modal {
   width: 800px;
   height: 600px;
