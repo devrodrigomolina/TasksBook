@@ -33,7 +33,7 @@
       </div>
       <div class="menu-estatisticas">
         <h2 class="categoria-titulo">Estatisticas</h2>
-        <nuxt-link to="/"
+        <nuxt-link to="/statistics"
           ><fa class="fa-lg" icon="chart-simple" />Estatisticas</nuxt-link
         >
       </div>
@@ -64,7 +64,7 @@ export default {
 
 .modal-enter,
 .modal-leave-to {
-  transform: translateX(20px);
+  transform: translateY(-20px);
   opacity: 0;
 }
 

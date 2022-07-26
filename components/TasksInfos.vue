@@ -78,8 +78,6 @@ export default {
   align-items: center;
   justify-content: center;
   border: 3px solid #29a19c;
-  animation: a 0.9s ease-in linear both;
-  /*   animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 .qtd-tasks {
@@ -87,21 +85,35 @@ export default {
   margin-bottom: 5px;
   color: #29a19c;
 }
-@keyframes a {
-  0% {
-    border: transparent;
+
+/* RESPONSIVO */
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+  .titulo {
+    font-size: 20px;
   }
-  30% {
-    border-right: 2px solid #29a19c;
+  .container-tasks-infos {
+    width: 550px;
+    height: 250px;
+    margin-left: 25px;
   }
-  60% {
-    border-bottom: 2px solid #29a19c;
-  }
-  90% {
-    border-left: 2px solid #29a19c;
-  }
-  100% {
-    border: 2px solid #29a19c;
+  .circulo-infos {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
   }
 }
+
 </style>

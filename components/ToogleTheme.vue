@@ -8,9 +8,14 @@
 
 <script>
 export default {
+  data() {
+    return {
+      actualyTheme: false
+    }
+  },
   methods: {
     changeTheme() {
-      let allP = document.querySelectorAll('p');
+/*       let allP = document.querySelectorAll('p');
       let allA = document.querySelectorAll('a');
       let allInputs = document.querySelectorAll('input[type=text]')
       allP.forEach((elementP) => {
@@ -21,8 +26,8 @@ export default {
       })
       allInputs.forEach((elementInputs) => {
         elementInputs.classList.toggle('inputs-color')
-      })
-
+      }) */
+      this.actualyTheme != this.actualyTheme
       document.body.classList.toggle('clear')
       document.querySelector('.menu').classList.toggle('white-clear')
       document.querySelector('.container-tasks-infos').classList.toggle('white-clear')

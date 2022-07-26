@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .container-tasks-active-complete {
   width: 700px;
   height: 450px;
@@ -63,4 +65,40 @@ export default {
   height: 50%;
   overflow: auto;
 }
+
+/* REPONSIVO */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+.container-tasks-active-complete {
+  width: 550px;
+  height: 400px;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+.titulo {
+  padding: 15px 15px;
+  font-size: 18px;
+}
+
+.task-itens,
+.tasks-completas {
+  width: 480px;
+  height: 35px;
+  margin: 3px auto;
+}
+}
+
 </style>

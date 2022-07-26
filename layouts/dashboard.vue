@@ -1,15 +1,18 @@
 <template>
   <div class="container-dashboard">
     <Header />
+    <transition :appear="true" mode="out-in" name="tasks-component">
     <div class="infos-tasks">
       <TasksInfos :infos="actualyPage" />
       <ActiveAndCompletedTasks :infos="actualyPage" />
     </div>
-    
+    </transition>
+    <transition :appear="true" mode="out-in" name="charts-component">
     <div class="charts">
       <VueApexBarCharts :infos="actualyPage"/>
       <VueApexCircle :infos="actualyPage"/>
     </div>
+    </transition>
     <Nuxt />
   </div>
 </template>
@@ -55,16 +58,50 @@ export default {
 </script>
 
 <style>
+/*  ANIMAÇÕES */
+.tasks-component-enter,
+.tasks-component-leave-to {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.tasks-component-enter-active,
+.tasks-component-leave-active {
+  transition: all 1s;
+}
+.tasks-component-enter-to,
+.tasks-component-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.charts-component-enter,
+.charts-component-leave-to {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.charts-component-enter-active,
+.charts-component-leave-active {
+  transition: all 1s;
+}
+.charts-component-enter-to,
+.charts-component-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ELEMENTOS */
 .container-dashboard {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
-
 .charts{
   width: 650px;
   margin-left: 80px;
   margin-top: 60px;
 }
+
+/* RESPONSIVIDADE */
+
 
 </style>

@@ -62,4 +62,11 @@ input[type="checkbox"]:checked  {
 .complete-item {
   color: green;
 }
+
+/* RESPONSIVO */
+
+@media (max-width: 1200px) {
+
+}
+
 </style>
