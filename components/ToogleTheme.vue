@@ -15,24 +15,17 @@ export default {
   },
   methods: {
     changeTheme() {
-/*       let allP = document.querySelectorAll('p');
-      let allA = document.querySelectorAll('a');
-      let allInputs = document.querySelectorAll('input[type=text]')
-      allP.forEach((elementP) => {
-        elementP.classList.toggle('p-color')
-      })
-      allA.forEach((elementA) => {
-        elementA.classList.toggle('a-color')
-      })
-      allInputs.forEach((elementInputs) => {
-        elementInputs.classList.toggle('inputs-color')
-      }) */
-      this.actualyTheme != this.actualyTheme
       document.body.classList.toggle('clear')
-      document.querySelector('.menu').classList.toggle('white-clear')
-      document.querySelector('.container-tasks-infos').classList.toggle('white-clear')
-      document.querySelector('.container-tasks-active-complete').classList.toggle('white-clear')
-
+      let a = document.querySelector('.container-dashboard')
+      let b = document.querySelector('.container-tasks-active-complete')
+      let c = document.querySelector('.container-tasks-infos')
+      let d = document.querySelector('.menu')
+ 
+      a.classList.toggle('white-clear')
+      b.classList.toggle('white-clear')
+      c.classList.toggle('white-clear')
+      d.classList.toggle('white-clear')
+  
       document.querySelector('.icontheme').classList.toggle('black')
     }
   }
@@ -42,16 +35,15 @@ export default {
 <style>
 .clear {
   background: #FAFAFA !important;
+  color: rgb(17, 16, 16) !important; 
 }
 .black {
-  color: #000 !important; 
+  color: black !important;
 }
 .white-clear {
+  color: rgb(17, 16, 16) !important; 
   background: #FFFF !important;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.158) !important;
-}
-.p-color,.a-color, .inputs-color {
-  color: #000 !important;
 }
 
 .item-toogle {

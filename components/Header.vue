@@ -96,7 +96,7 @@ export default {
 }
 .menu a {
   font-size: 16px;
-  color: white;
+  color: rgb(172, 172, 172);
   margin: 15px 10px;
   font-weight: 100;
 }
