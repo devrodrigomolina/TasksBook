@@ -3,6 +3,7 @@
     <Header />
     <transition :appear="true" mode="out-in" name="tasks-component">
     <div class="infos-tasks">
+      <TopHeader/>
       <TasksInfos :infos="actualyPage" />
       <ActiveAndCompletedTasks :infos="actualyPage" />
     </div>
@@ -96,12 +97,16 @@ export default {
   height: 100vh;
 }
 .charts{
-  width: 650px;
-  margin-left: 80px;
-  margin-top: 60px;
+  width: 30vw;
+  margin: 60px auto;
 }
 
 /* RESPONSIVIDADE */
 
-
+@media (max-width: 1024px) {
+.charts{
+  width: 30vw;
+  margin: 70px auto;
+}
+}
 </style>

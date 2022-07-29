@@ -1,18 +1,10 @@
 <template>
   <div class="container-header">
     <div class="menu">
-      <div class="top-header">
-        <div class="logo">
-          <img src="../static/icon-task.png" alt="" srcset="" />
-          <h2>Tasks Book</h2>
-        </div>
-        <Button :showmodal="openModal" title="Nova task" @emit="openOrCloseModal" />
-        <transition name="modal">
-          <ModalAddTask v-if="openModal" @emit="openOrCloseModal"/>
-        </transition>
-        <ToogleTheme />
+      <div class="logo">
+        <img src="../static/icon-task.png" alt="" srcset="" />
+        <h2>Tasks Book</h2>
       </div>
-
       <div class="menu-categorias">
         <h2 class="categoria-titulo">Categorias</h2>
         <nuxt-link to="/"
@@ -43,16 +35,7 @@
 
 <script>
 export default {
-  data() {
-    return {
-      openModal: false,
-    };
-  },
-  methods: {
-    openOrCloseModal(param) {
-      this.openModal = param;
-    },
-  },
+
 };
 </script>
 
@@ -68,12 +51,7 @@ export default {
   opacity: 0;
 }
 
-.top-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 45vw;
-}
+
 .container-header {
   width: 280px;
   height: 100vh;
@@ -128,4 +106,48 @@ export default {
 .logo h2 {
   color: #29a19c;
 }
+
+/* RESPONSIVO */
+
+@media (max-width: 1440px) {
+.container-header {
+  width: 230px;
+}
+.logo img {
+  width: 40px;
+}
+.logo h2 {
+  font-size: 1.2rem;
+}
+}
+
+@media (max-width: 1024px) {
+.container-header {
+  width: 180px;
+}
+.logo img {
+  width: 30px;
+  margin-right: 6px;
+}
+.logo h2 {
+  font-size: 1rem;
+}
+.menu-categorias {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.menu a {
+  font-size: 13px;
+}
+.categoria-titulo {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #29a19c;
+}
+.menu-estatisticas {
+  margin-top: 70px;
+  margin-left: 10px;
+}
+}
+
 </style>

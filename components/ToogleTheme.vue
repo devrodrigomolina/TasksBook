@@ -49,6 +49,7 @@ export default {
 .item-toogle {
   position: relative;
   z-index: 100;
+  margin-right: 180px;
   color: white;
 }
 </style>

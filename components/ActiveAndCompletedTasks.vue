@@ -38,7 +38,7 @@ export default {
   height: 450px;
   background: #2c3440;
   color: white;
-  margin-left: 135px;
+  margin-left: 80px;
   margin-top: 40px;
   border-radius: 10px;
 }
@@ -81,24 +81,36 @@ export default {
 @media (min-width: 992px) and (max-width: 1199.98px) {}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
 .container-tasks-active-complete {
-  width: 550px;
-  height: 400px;
-  margin-left: 25px;
-  margin-top: 20px;
+  width: 650px;
+  height: 450px;
+  margin-left: 35px;
+  margin-top: 30px;
 }
-.titulo {
-  padding: 15px 15px;
-  font-size: 18px;
-}
-
 .task-itens,
 .tasks-completas {
-  width: 480px;
-  height: 35px;
-  margin: 3px auto;
+  height: 45px;
 }
 }
+
+@media (max-width: 1024px) {
+.container-tasks-active-complete {
+  width: 400px;
+  height: 340px;
+}
+.task-itens,
+.tasks-completas {
+  width: 90%;
+  height: 40px;
+}
+
+.tarefas-completas h2,
+.tarefas-ativas h2 {
+  font-size: 1rem;
+  padding: 10px;
+}
+}
+
 
 </style>

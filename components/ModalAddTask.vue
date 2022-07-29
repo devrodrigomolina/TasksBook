@@ -72,6 +72,7 @@ export default {
   background: #2c3440;
   border-radius: 10px;
   position: absolute;
+  z-index: 10;
   top: 70px;
   left: 415px;
   margin: 10px auto;
@@ -113,5 +114,16 @@ select {
   color: white;
   cursor: pointer;
   font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+.container-modal {
+  width: 600px;
+  height: 500px;
+  left: 215px;
+}
+.dados {
+  max-width: 400px;
+}
 }
 </style>

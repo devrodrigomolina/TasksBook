@@ -54,8 +54,7 @@ export default {
   height: 300px;
   background: #2c3440;
   color: white;
-  margin-left: 135px;
-  margin-top: 100px;
+  margin-left: 80px;
   border-radius: 10px;
   text-align: center;
   display: grid;
@@ -87,32 +86,26 @@ export default {
 }
 
 /* RESPONSIVO */
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {}
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
   .titulo {
     font-size: 20px;
   }
   .container-tasks-infos {
-    width: 550px;
-    height: 250px;
-    margin-left: 25px;
+    width: 650px;
+    margin-left: 35px;
   }
   .circulo-infos {
     width: 100px;
     height: 100px;
     margin-top: 5px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-tasks-infos {
+    width: 400px;
+    margin-left: 35px;
   }
 }
 
