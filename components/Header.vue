@@ -1,6 +1,8 @@
 <template>
-  <div class="container-header" @mobileMenu="test" >
-    <div class="menu">
+  <div class="container-header">
+    <MenuMobile  @emitChecked="test"/>
+
+    <div class="menu" :class="{activedMenuMobile: !checked}">
       <div class="logo">
         <img src="../static/icon-task.png" alt="" srcset="" />
         <h2>Tasks Book</h2>
@@ -35,18 +37,22 @@
 
 <script>
 export default {
-  methods: {
-    test(e) {console.log(e)}
+  data() {
+    return {
+      checked: false
+    }
   },
-  created() {
-
-  }
+  methods: {
+    test(e) {
+      this.checked = e
+    }
+  },
 };
 </script>
 
 <style>
-
-.modal-enter-active,.modal-leave-active {
+.modal-enter-active,
+.modal-leave-active {
   transition: all 0.3s ease-out;
 }
 
@@ -56,11 +62,11 @@ export default {
   opacity: 0;
 }
 
-
 .container-header {
   width: 280px;
   height: 100vh;
 }
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -115,49 +121,65 @@ export default {
 /* RESPONSIVO */
 
 @media (max-width: 767.98px) {
-.container-header {
-  display: none;
+  .menu {
+    display: none;
+  }
+  .activedMenuMobile {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+  }
+.menu-categorias {
+  align-items: center;
+}
+.menu-estatisticas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 }
-
 
 @media (max-width: 1440px) {
-.container-header {
-  width: 230px;
-}
-.logo img {
-  width: 40px;
-}
-.logo h2 {
-  font-size: 1.2rem;
-}
+  .container-header {
+    width: 230px;
+  }
+  .logo img {
+    width: 40px;
+  }
+  .logo h2 {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 1024px) {
-.container-header {
-  width: 180px;
+  .container-header {
+    width: 180px;
+  }
+  .logo img {
+    width: 30px;
+    margin-right: 6px;
+  }
+  .logo h2 {
+    font-size: 1rem;
+  }
+  .menu-categorias {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .menu a {
+    font-size: 13px;
+  }
+  .categoria-titulo {
+    font-size: 1.1rem;
+  }
+  .menu-estatisticas {
+    margin-top: 70px;
+    margin-left: 10px;
+  }
 }
-.logo img {
-  width: 30px;
-  margin-right: 6px;
-}
-.logo h2 {
-  font-size: 1rem;
-}
-.menu-categorias {
-  margin-top: 20px;
-  margin-left: 10px;
-}
-.menu a {
-  font-size: 13px;
-}
-.categoria-titulo {
-  font-size: 1.1rem;
-}
-.menu-estatisticas {
-  margin-top: 70px;
-  margin-left: 10px;
-}
-}
-
 </style>
