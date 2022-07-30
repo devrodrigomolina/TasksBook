@@ -52,4 +52,10 @@ export default {
   margin-right: 180px;
   color: white;
 }
+
+@media (max-width: 1024px) {
+.item-toogle {
+  margin-right: 0px;
+}
+}
 </style>

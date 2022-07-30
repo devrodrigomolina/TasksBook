@@ -148,7 +148,7 @@ export default {
   outline: none;
   border: none;
   background: transparent;
-  color: white;
+  color: rgb(177, 177, 177);
   font-size: 1rem;
 }
 

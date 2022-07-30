@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style>
+
 /*  ANIMAÇÕES */
 .tasks-component-enter,
 .tasks-component-leave-to {
@@ -107,6 +108,16 @@ export default {
 .charts{
   width: 30vw;
   margin: 70px auto;
+}
+}
+
+@media (max-width: 767.98px) { 
+.container-dashboard {
+  flex-direction: column;
+}
+.charts{
+  width: 90%;
+  margin: 20px auto;
 }
 }
 </style>

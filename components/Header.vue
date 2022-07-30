@@ -1,5 +1,5 @@
 <template>
-  <div class="container-header">
+  <div class="container-header" @mobileMenu="test" >
     <div class="menu">
       <div class="logo">
         <img src="../static/icon-task.png" alt="" srcset="" />
@@ -35,7 +35,12 @@
 
 <script>
 export default {
+  methods: {
+    test(e) {console.log(e)}
+  },
+  created() {
 
+  }
 };
 </script>
 
@@ -109,6 +114,13 @@ export default {
 
 /* RESPONSIVO */
 
+@media (max-width: 767.98px) {
+.container-header {
+  display: none;
+}
+}
+
+
 @media (max-width: 1440px) {
 .container-header {
   width: 230px;
@@ -141,8 +153,6 @@ export default {
 }
 .categoria-titulo {
   font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: #29a19c;
 }
 .menu-estatisticas {
   margin-top: 70px;

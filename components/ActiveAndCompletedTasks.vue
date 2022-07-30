@@ -97,7 +97,7 @@ export default {
 @media (max-width: 1024px) {
 .container-tasks-active-complete {
   width: 400px;
-  height: 340px;
+  height: 330px;
 }
 .task-itens,
 .tasks-completas {
@@ -112,5 +112,23 @@ export default {
 }
 }
 
+@media (max-width: 767.98px) {
+.container-tasks-active-complete {
+  width: 380px;
+  height: 400px;
+  margin: 15px auto;
+}
+.task-itens,
+.tasks-completas {
+  width: 90%;
+  height: 40px;
+}
+
+.tarefas-completas h2,
+.tarefas-ativas h2 {
+  font-size: 1rem;
+  padding: 10px;
+}
+}
 
 </style>

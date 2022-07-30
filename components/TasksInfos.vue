@@ -109,4 +109,18 @@ export default {
   }
 }
 
+@media (max-width: 767.98px) {
+.container-tasks-infos {
+  width: 380px;
+  margin: 0 auto;
+  height: 250px;
+} 
+
+.circulo-infos {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+}
 </style>
