@@ -82,7 +82,7 @@ label span:nth-child(3) {
 @media (max-width: 767.98px) {
   .menu-hamburguer {
     display: block;
-    margin: 33px 0 0 40px;
+    margin: 33px 0 0 15px;
   }
 }
 </style>

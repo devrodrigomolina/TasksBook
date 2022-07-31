@@ -71,7 +71,7 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
-   transition: all .3s;
+  transition: all .3s;
   background: #2c3440;
 }
 .menu-categorias {

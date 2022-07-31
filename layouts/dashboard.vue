@@ -116,6 +116,8 @@ export default {
 @media (max-width: 767.98px) { 
 .container-dashboard {
   flex-direction: column;
+  max-width: 95vw;
+  margin: 0 auto;
 }
 .charts{
   width: 90%;
