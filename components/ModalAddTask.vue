@@ -126,4 +126,29 @@ select {
   max-width: 400px;
 }
 }
+
+@media (max-width: 767.98px) {
+.container-modal {
+  
+}
+
+.container-modal {
+  width: 90%;
+  height: 500px;
+  top: 110px;
+  left: auto;
+  background: #2c3440;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 10;
+  margin: 10px auto;
+  border: 1px dashed #29a19c;
+}
+.dados {
+  width: 100%;
+  max-width: 300px;
+  color: white;
+  margin: 80px auto;
+}
+}
 </style>

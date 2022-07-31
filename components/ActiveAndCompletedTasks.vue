@@ -6,20 +6,28 @@
         <h4>Tarefa</h4>
         <h4>Categoria</h4>
       </div>
-      <ul class="task-itens" v-for="(tasks, index) in infos.tasks" :key="index">
-        <TasksActiveds :task="tasks" :pos="index" />
-      </ul>
+      <div class="tarefas-container">
+        <ul
+          class="task-itens"
+          v-for="(tasks, index) in infos.tasks"
+          :key="index"
+        >
+          <TasksActiveds :task="tasks" :pos="index" />
+        </ul>
+      </div>
     </div>
 
     <div class="tarefas-completas">
       <h2 class="titulo">Tarefas Completas</h2>
-      <ul
-        class="tasks-completas"
-        v-for="(tasksCompleteds, index) in infos.tasksCompleteds"
-        :key="index"
-      >
-        <TasksCompleted :taskCompleted="tasksCompleteds" />
-      </ul>
+      <div class="tarefas-container">
+        <ul
+          class="tasks-completas"
+          v-for="(tasksCompleteds, index) in infos.tasksCompleteds"
+          :key="index"
+        >
+          <TasksCompleted :taskCompleted="tasksCompleteds" />
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -31,8 +39,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .container-tasks-active-complete {
   width: 700px;
   height: 450px;
@@ -42,9 +48,15 @@ export default {
   margin-top: 40px;
   border-radius: 10px;
 }
+.tarefas-container {
+  height: 140px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
 .titulo {
   padding: 20px 20px;
   color: #29a19c;
+  text-align: center;
 }
 .infosCategoria {
   max-width: 600px;
@@ -63,72 +75,82 @@ export default {
 .tarefas-completas,
 .tarefas-ativas {
   height: 50%;
-  overflow: auto;
 }
 
 /* REPONSIVO */
 
 /* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+}
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1440px) {
-.container-tasks-active-complete {
-  width: 650px;
-  height: 450px;
-  margin-left: 35px;
-  margin-top: 30px;
-}
-.task-itens,
-.tasks-completas {
-  height: 45px;
-}
+  .container-tasks-active-complete {
+    width: 650px;
+    height: 450px;
+    margin-left: 35px;
+    margin-top: 30px;
+  }
+  .task-itens,
+  .tasks-completas {
+    height: 45px;
+  }
 }
 
 @media (max-width: 1024px) {
-.container-tasks-active-complete {
-  width: 400px;
-  height: 330px;
-}
-.task-itens,
-.tasks-completas {
-  width: 90%;
-  height: 40px;
-}
+  .container-tasks-active-complete {
+    width: 400px;
+    height: 330px;
+  }
+  .task-itens,
+  .tasks-completas {
+    width: 90%;
+    height: 40px;
+  }
 
-.tarefas-completas h2,
-.tarefas-ativas h2 {
-  font-size: 1rem;
-  padding: 10px;
-}
+  .tarefas-completas h2,
+  .tarefas-ativas h2 {
+    font-size: 1rem;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 767.98px) {
-.container-tasks-active-complete {
-  width: 380px;
-  height: 400px;
-  margin: 15px auto;
-}
-.task-itens,
-.tasks-completas {
-  width: 90%;
-  height: 40px;
-}
+  .container-tasks-active-complete {
+    width: 380px;
+    height: 400px;
+    margin: 15px auto;
+  }
+  .task-itens,
+  .tasks-completas {
+    width: 90%;
+    height: 40px;
+  }
 
-.tarefas-completas h2,
-.tarefas-ativas h2 {
-  font-size: 1rem;
-  padding: 10px;
-}
-}
+  .tarefas-completas h2,
+  .tarefas-ativas h2 {
+    font-size: 1rem;
+    padding: 10px;
+  }
 
+  .infosCategoria {
+    width: 90%;
+    margin: 0 auto;
+    padding-right: 33px;
+    padding-left: 10px;
+    justify-content: space-around;
+  }
+}
 </style>

@@ -77,4 +77,12 @@ export default {
   cursor: pointer;
   color: green;
 }
+
+@media (max-width: 767.98px) {
+.container-btn {
+  width: 180px;
+  margin-right: 70px;
+}
+
+}
 </style>

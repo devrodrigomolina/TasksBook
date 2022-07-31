@@ -159,6 +159,10 @@ li {
   height: 100%;
   border-radius: 10px;
   border: 1px solid #8d8d8da2;
+  transition: all .4s;
+}
+li:hover {
+  background: #29a19d56;
 }
 .none {
   opacity: 0;
@@ -194,5 +198,16 @@ input[type="checkbox"]:checked {
 }
 .complete-item {
   color: green;
+}
+
+/* RESPONSIVO */
+@media (max-width: 767.98px) {
+.icons {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.icons svg {
+  width: 14px;
+}
 }
 </style>

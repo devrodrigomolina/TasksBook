@@ -1,8 +1,7 @@
 <template>
   <div class="container-header">
-    <MenuMobile  @emitChecked="test"/>
-
-    <div class="menu" :class="{activedMenuMobile: !checked}">
+    <MenuMobile @emitChecked="menu"/>
+    <div class="menu" :class="{activedMenuMobile: checked}">
       <div class="logo">
         <img src="../static/icon-task.png" alt="" srcset="" />
         <h2>Tasks Book</h2>
@@ -43,8 +42,8 @@ export default {
     }
   },
   methods: {
-    test(e) {
-      this.checked = e
+    menu(event) {
+      this.checked = event
     }
   },
 };
@@ -62,16 +61,17 @@ export default {
   opacity: 0;
 }
 
+/* ELEMENTOS */
 .container-header {
   width: 280px;
   height: 100vh;
-}
-
+} 
 .menu {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
+   transition: all .3s;
   background: #2c3440;
 }
 .menu-categorias {
@@ -125,6 +125,7 @@ export default {
     display: none;
   }
   .activedMenuMobile {
+    transition: all .3s;
     width: 100vw;
     height: 100vh;
     display: block;

@@ -41,8 +41,6 @@ export default {
   width: 100%;
 }
 
-
-
 @media (max-width: 1024px) {
   .top-header {
     justify-content: space-around;
@@ -51,8 +49,9 @@ export default {
 }
 @media (max-width: 767.98px) {
   .top-header {
-    justify-content: space-around;
-    margin: auto 0px;
+    width: 380px;
+    justify-content: flex-end;
+    margin: 0 auto;
   }
 }
 </style>

@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     emitChecked() {
-      this.$emit('emitChecked', this.checked)
+      this.$emit('emitChecked', !this.checked)
     }
   }
 }
@@ -82,7 +82,7 @@ label span:nth-child(3) {
 @media (max-width: 767.98px) {
   .menu-hamburguer {
     display: block;
-    margin: 20px 0 0 20px;
+    margin: 33px 0 0 40px;
   }
 }
 </style>

@@ -92,6 +92,8 @@ export default {
 }
 
 /* ELEMENTOS */
+
+
 .container-dashboard {
   display: flex;
   width: 100vw;

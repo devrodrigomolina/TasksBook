@@ -1,11 +1,6 @@
 <template>
   <li>
-    <input class="none selected" type="checkbox" name="" id="">
     <p class="completed">{{taskCompleted.task.task}} | {{taskCompleted.task.optionsTask}}</p>
-    <div class="none icons">
-      <fa class="update-item" icon="pen-to-square" /> 
-      <fa class="remove-item" icon="trash-can" />  
-    </div>
   </li>
 </template>
 
@@ -25,6 +20,10 @@ li {
   margin-bottom: 4px;
   border-radius: 10px;
   border: 1px solid #8d8d8da2;
+  transition: all .4s;
+}
+li:hover {
+  background: #29a19d56;
 }
 .none {
   opacity: 0;
@@ -64,9 +63,9 @@ input[type="checkbox"]:checked  {
 }
 
 /* RESPONSIVO */
-
-@media (max-width: 1200px) {
-
+@media (max-width: 767.98px) {
+.icons svg{
+  width: 14px;
 }
-
+}
 </style>
