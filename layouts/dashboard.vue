@@ -2,11 +2,11 @@
   <div class="container-dashboard">
     <Header />
     <transition :appear="true" mode="out-in" name="tasks-component">
-    <div class="infos-tasks">
-      <TopHeader/>
-      <TasksInfos :infos="actualyPage" />
-      <ActiveAndCompletedTasks :infos="actualyPage" />
-    </div>
+      <div class="infos-tasks">
+        <TopHeader/>
+        <TasksInfos :infos="actualyPage" />
+        <ActiveAndCompletedTasks :infos="actualyPage" />
+      </div>
     </transition>
     <transition :appear="true" mode="out-in" name="charts-component">
     <div class="charts">
@@ -40,6 +40,7 @@ export default {
       this.actualyPage = this.$store.state.otherstasks
     }
   },
+
   watch: {
     '$route': {
       deep: true,
@@ -64,7 +65,7 @@ export default {
 
 <style>
 
-/*  ANIMAÇÕES */
+/*  ANIMAÇÕES DOS COMPONENTES */
 .tasks-component-enter,
 .tasks-component-leave-to {
   opacity: 0;
@@ -79,7 +80,7 @@ export default {
   opacity: 1;
   transform: translateX(0);
 }
-
+/* ANIMAÇOES DOS CHARTS */
 .charts-component-enter,
 .charts-component-leave-to {
   opacity: 0;
@@ -94,6 +95,12 @@ export default {
   opacity: 1;
   transform: translateX(0);
 }
+/* ANIMAÇOES DO CONTEUDO TODO */
+
+
+
+
+
 
 /* ELEMENTOS */
 
