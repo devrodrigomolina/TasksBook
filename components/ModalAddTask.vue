@@ -41,13 +41,18 @@ export default {
     sendForm() {
       if (this.optionsTask == "familia") {
         this.familyAddTask({ task: this.task, optionsTask: this.optionsTask });
+        this.$router.push('family')
       } else if (this.optionsTask == "trabalho") {
         this.workAddTask({ task: this.task, optionsTask: this.optionsTask });
+        this.$router.push('work')
       } else if (this.optionsTask == "sports") {
         this.sportsAddTask({ task: this.task, optionsTask: this.optionsTask });
+        this.$router.push('sports')
       } else if (this.optionsTask == "outros") {
         this.othersAddTask({ task: this.task, optionsTask: this.optionsTask });
+        this.$router.push('otherstasks')
       }
+      this.$emit('emit', false)
     },
     modalClose() {
       this.$emit('emit', false)
