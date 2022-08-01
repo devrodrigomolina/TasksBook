@@ -1,6 +1,10 @@
 <template>
-  <li>
-    <input class="none selected" type="checkbox" />
+  <li :class="{ actived: checkedInput }">
+    <input
+      class="none selected"
+      type="checkbox"
+      v-model="checkedInput"
+    />
     <input
       class="ipt-edit-task"
       type="text"
@@ -39,6 +43,8 @@ export default {
       newTaskText: "",
       sucess: false,
       route: this.checkRoute,
+      backgroundColorLi: 'red',
+      checkedInput: false
     };
   },
   props: {
@@ -65,6 +71,11 @@ export default {
       "editTaskSports",
       "deleteTasksSports",
     ]),
+    ...mapActions("otherstasks", [
+      "CompleteTaskOthers",
+      "editTaskOthers",
+      "deleteTasksOthers",
+    ]),
 
     checkRouteAndComplete(posicaoTask, task) {
       this.checkRoute == "/family"
@@ -73,6 +84,8 @@ export default {
         ? this.CompleteTaskWork({ posicaoTask, task })
         : this.checkRoute == "/sports"
         ? this.CompleteTaskSports({ posicaoTask, task })
+        : this.checkRoute == "/otherstasks"
+        ? this.CompleteTaskOthers({ posicaoTask, task })
         : "";
     },
 
@@ -95,6 +108,12 @@ export default {
             oldtaskk: oldTask,
             posicaoTask: pos,
           })
+        : this.checkRoute == "/otherstasks"
+        ? this.editTaskOthers({
+            newtask: this.newTaskText,
+            oldtaskk: oldTask,
+            posicaoTask: pos,
+          })
         : "";
     },
 
@@ -105,6 +124,8 @@ export default {
         ? this.deleteTasksWork(posicaoTask)
         : this.checkRoute == "/sports"
         ? this.deleteTasksSports(posicaoTask)
+        : this.checkRoute == "/otherstasks"
+        ? this.deleteTasksOthers(posicaoTask)
         : "";
     },
 
@@ -159,12 +180,13 @@ li {
   height: 100%;
   border-radius: 10px;
   border: 1px solid #8d8d8da2;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 li:hover {
   background: #29a19d56;
 }
-.none {
+.none,
+.disabled {
   opacity: 0;
 }
 
@@ -180,7 +202,9 @@ input[type="checkbox"]:checked {
   transition: all 0.7s;
   opacity: 1;
 }
-
+.actived {
+  background: #29a19d56;
+}
 .icons {
   display: flex;
   margin-right: 20px;
@@ -202,12 +226,12 @@ input[type="checkbox"]:checked {
 
 /* RESPONSIVO */
 @media (max-width: 767.98px) {
-.icons {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-.icons svg {
-  width: 14px;
-}
+  .icons {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .icons svg {
+    width: 14px;
+  }
 }
 </style>

@@ -36,6 +36,8 @@ export default {
       this.actualyPage = this.$store.state.work
     } else if (this.$route.path == "/sports") {
       this.actualyPage = this.$store.state.sports
+    } else if (this.$route.path == "/otherstasks") {
+      this.actualyPage = this.$store.state.otherstasks
     }
   },
   watch: {
@@ -50,6 +52,8 @@ export default {
           this.actualyPage = this.$store.state.work
         } else if (newValue.path == "/sports") {
           this.actualyPage = this.$store.state.sports
+        } else if (newValue.path == "/otherstasks") {
+          this.actualyPage = this.$store.state.otherstasks
         }
       }
     },
@@ -116,7 +120,9 @@ export default {
 @media (max-width: 767.98px) { 
 .container-dashboard {
   flex-direction: column;
-  max-width: 95vw;
+}
+.infos-tasks {
+  max-width: 90vw;
   margin: 0 auto;
 }
 .charts{

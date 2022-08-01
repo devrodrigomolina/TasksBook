@@ -37,6 +37,7 @@ export default {
     ...mapActions("family", ["familyAddTask"]),
     ...mapActions("work", ["workAddTask"]),
     ...mapActions("sports", ["sportsAddTask"]),
+    ...mapActions("otherstasks", ["othersAddTask"]),
     sendForm() {
       if (this.optionsTask == "familia") {
         this.familyAddTask({ task: this.task, optionsTask: this.optionsTask });
@@ -44,6 +45,8 @@ export default {
         this.workAddTask({ task: this.task, optionsTask: this.optionsTask });
       } else if (this.optionsTask == "sports") {
         this.sportsAddTask({ task: this.task, optionsTask: this.optionsTask });
+      } else if (this.optionsTask == "outros") {
+        this.othersAddTask({ task: this.task, optionsTask: this.optionsTask });
       }
     },
     modalClose() {

@@ -20,7 +20,7 @@
         <nuxt-link to="/sports"
           ><fa class="fa-lg" icon="medal" />Sports</nuxt-link
         >
-        <nuxt-link to="/others"
+        <nuxt-link to="/otherstasks"
           ><fa class="fa-lg" icon="boxes-packing" />Outros</nuxt-link
         >
       </div>
