@@ -1,7 +1,8 @@
 <template>
   <div class="container-toogle">
     <div  @click.prevent="changeTheme" class="item-toogle">
-      <fa class="fa-2xl icontheme" icon="sun" />
+      <fa class="fa-2xl icontheme" icon="sun" v-if="!actualyTheme" />
+      <fa class="fa-2xl icontheme black" icon="moon" v-else />
     </div>
   </div>
 </template>
@@ -15,6 +16,7 @@ export default {
   },
   methods: {
     changeTheme() {
+      this.actualyTheme =! this.actualyTheme
       document.body.classList.toggle('clear')
       let a = document.querySelector('.container-dashboard')
       let b = document.querySelector('.container-tasks-active-complete')
@@ -26,7 +28,6 @@ export default {
       c.classList.toggle('white-clear')
       d.classList.toggle('white-clear')
   
-      document.querySelector('.icontheme').classList.toggle('black')
     }
   }
 }
